@@ -1,0 +1,233 @@
+/*   
+    O objetivo dessa estilização é tornar a tela inicial dividida com uma imagem
+    A demais tela seguirão basicamente o mesmo padrão
+    No final existe uma seção de @Media para deixar o sistema responsivo
+*/
+
+body{
+    margin: 0px;
+    padding: 0px;  
+}
+header{
+    display: flex;
+    background-color: #0057FF;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    border-radius: 7px;
+    height: 7vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 25px 0px 10px;
+}
+.Head-titulo {
+    flex-grow: 1;
+    text-align: center;
+}
+#usuario_logado {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+#tela_login {
+    display: flex; 
+    justify-content: space-around;
+    padding: 10px; 
+}
+#warehouse-image {
+    flex: 0.70; 
+    height: 78vh;
+    overflow: hidden; 
+    margin-top: 25px;
+    margin-right: 25px;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1.5s, transform 1.8s; 
+}
+
+
+#warehouse-image.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+#formulario_inicial {
+    flex: 0.30; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1.5s, transform 1.8s;
+}
+
+#formulario_inicial.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#warehouse-image img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    margin-left: 15px;
+}
+.login{
+    width: 350px;
+    padding: 0.7px 12px 15px; 
+    background-color: #E0E2F5;
+    margin: 0 auto;
+    margin-top: 0px;
+    border-radius: 10px;
+}
+.tela_novo{
+    width: 350px;
+    padding: 0.7px 12px 15px; 
+    background-color: #E0E2F5;
+    margin: 0 auto;
+    margin-top: 10VH;
+    border-radius: 10px;
+}
+.tabela_form{
+    width: 700px;
+    padding: 0.7px 12px 15px; 
+    background-color: #E0E2F5;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+.cadastro {
+    width: 350px;
+    padding: 0.7px 12px 15px; 
+    background-color: #EFAF8A;
+    margin: 0 auto;
+    margin-top: 0px;
+    border-radius: 10px;
+}
+
+.nova_senha {
+    width: 350px;
+    padding: 0.7px 12px 15px; 
+    background-color: #8b67da;
+    margin: 0 auto;
+    margin-top: 0px;
+    border-radius: 10px;
+}
+
+
+.login-form {
+    overflow-y: auto; 
+    max-height: 380px; 
+}
+.login-form h4 {
+    text-align: center;
+    font-size: 24px; 
+    margin-bottom: 18px; 
+}
+.login-form input, select,[type="password"] {
+    width: 100%;
+    margin: 14px 0; 
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.login-form button {
+    background-color: #0000ff;
+    color: white;
+    padding: 9px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 14px
+}
+.login-form button:hover{
+    background-color: #4444ff;
+}
+#background-image {
+    background: rgba(0, 0, 0, 0.5) url('Images/background-image.jpg') no-repeat center center fixed;
+    background-size: 100vw;
+    position: absolute;
+    opacity: 50%;
+    top: 30px;
+    width: 95%;
+    height: 82%;
+    margin: 2vw;
+    z-index: -1; 
+}
+.escolha-form{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 27vh;
+    position: relative;
+    z-index: 1;
+}
+.escolha-form button{
+    background-color: #ff0000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    height: 50px;
+    border-radius: 10px;
+}
+.escolha-form button:hover{
+    background-color: #ff3333;    
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    background-color: #fff;
+}
+th{
+    padding: 15px 0px 5px;
+}
+.footer {
+    justify-content:center;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#filtro {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 10px;
+}
+/*  A Seção abaixo lida com a responsividade do sistema*/
+@media (max-width: 550px) {
+    #background-image {
+        width: 100vw; 
+        height: 100hw;
+    }
+    #tela_login {
+        display: flex; 
+        justify-content: space-around; 
+        margin-right: 6vw; 
+    }
+    #warehouse-image {
+        visibility: hidden; 
+    }
+    #tela_selecionar .escolha-form {
+    flex-direction: column;
+    align-items: center;  
+    }
+    #tela_selecionar .escolha-form button {
+    width: 100%; 
+    margin-bottom: 10px; 
+    }
+}

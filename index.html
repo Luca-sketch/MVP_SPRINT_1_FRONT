@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Logistics WMS</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div id="back_icon">
+            <img src="Images/icon_back.png" alt="Voltar"
+                style="width: 35px; height: 35px" onclick="voltar_tela()">
+        </div>
+        <div class="Head-titulo">
+            <H2>Next Logistics WMS</H2>
+        </div>
+        <div id="usuario_logado">
+            <h3></h3>
+        </div>
+    </header>
+    <!-- Tela Inicial -->
+    <div id="tela_login">
+        <div id="warehouse-image"><img
+                src="Images/background-image.jpg"
+                alt="Warehouse"></div>
+        <div id="formulario_inicial">
+            <!-- Seção para iniciar a plataforma -->
+            <div class="login">
+                <div class="login-form">
+                    <h4>Login</h4>
+                    <label><b>Usuário</b></label>
+                    <input type="text" id="usuario" placeholder="Digite o usuário" required>
+                    <label><b>Senha</b></label>
+                    <input type="password" id="senha" placeholder="Digite a senha" required>
+                    <button onclick="realizarLogin(event) " type="submit">Entrar</button>
+                    <p>Não tem cadastro? <a href="" onclick="FormularioCadastro(event)">Clique aqui</a></p>
+                    <p>Quer mudar a senha? <a href="" onclick="FormularioNovaSenha(event)">Clique aqui</a></p>
+                </div>
+            </div>
+            <!-- Seção caso não tenha usuario para cadastrar -->
+            <div class="cadastro">
+                <div class="login-form">
+                    <h4>Cadastro</h4>
+                    <label><b>Usuário</b></label>
+                    <input type="text" id="new_usuario" placeholder="Digite o usuário" required>
+                    <label><b>Senha</b></label>
+                    <input type="password" id="new_senha" placeholder="Digite a senha" required>
+                    <button onclick="enviarCadastro(event)" type="submit">Enviar/ Entrar</button>
+                    <p>Já tem cadastro? <a href="" onclick="FormularioLogin(event)">Voltar</a></p>
+                </div>
+            </div>
+            <!-- Seção caso queira cadastrar nova senha -->
+            <div class="nova_senha">
+                <div class="login-form">
+                    <h4>Nova Senha</h4>
+                    <label><b>Usuário</b></label>
+                    <input type="text" id="new_usuario_2" placeholder="Digite o usuário" required>
+                    <label><b>Senha</b></label>
+                    <input type="password" id="new_senha_2" placeholder="Digite a senha" required>
+                    <label><b>Nova Senha</b></label>
+                    <input type="password" id="nova_senha_22" placeholder="Digite a senha" required>
+                    <!-- Corrigido aqui -->
+                    <button onclick="cadastrarNovaSenha(event)" type="submit">Enviar/ Entrar</button>
+                    <p>Mudou de ideia? <a href="" onclick="FormularioLogin(event)">Voltar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Seção escolha de opção -->
+    <div id="tela_selecionar">
+        <div id="background-image"></div>
+        <div class="escolha-form">
+            <button onclick="tela_novo(event)">Novo</button>
+            <button onclick="tela_historico(event)">Histórico</button>
+        </div>
+    </div>
+    <!-- Seção novo -->
+    <div id="tela_novo">
+        <div id="background-image"></div>
+        <div class="tela_novo">
+            <div class="login-form">
+                <label><b>Material</b></label>
+                <input type="text" id="new_material" placeholder="Digite o material" required>
+                <label><b>Quantidade</b></label>
+                <input type="number" id="new_quantidade" placeholder="Digite a quantidade" required>
+                <label><b>Sku</b></label>
+                <input type="text" id="new_sku" placeholder="Digite a sku" required>
+                <label><b>Rua</b></label>
+                <input type="text" id="new_rua" placeholder="Digite a rua" required>
+                <label><b>Posição</b></label>
+                <input type="text" id="new_posicao" placeholder="Digite a posicao" required>
+                <button onclick="enviar(event)" >Enviar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Seção Historico -->
+    <div id="tela_historico">
+        <div id="background-image"></div>
+        <div class="tabela_form">
+            <div class="login-form">
+                <div id="filtro">
+                    <label><b>Rua:</b></label>
+                    <input id="filtroRua" type="text" placeholder="Digite a rua">
+                    <label><b>Posição:</b></label>
+                    <input id="filtroPosicao" type="text" placeholder="Digite a posição">               
+                </div>
+                <button onclick="preencherTabela(event)" >Enviar</button>
+                <table id="tabela" class="table table-responsive">
+                    <tr>
+                        <th>Material</th>
+                        <th>Quantidade</th>
+                        <th>Sku</th>
+                        <th>Rua</th>
+                        <th>Posição</th>
+                        <th>Nome</th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <h5>lucas@2023</h5>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
